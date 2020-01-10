@@ -11,8 +11,10 @@ BASIC_SECURITY = [{'Basic': []}]
 
 
 @method_decorator(name='list', decorator=swagger_auto_schema(security=BASIC_SECURITY))
+@method_decorator(name='create', decorator=swagger_auto_schema(security=BASIC_SECURITY))
 @method_decorator(name='retrieve', decorator=swagger_auto_schema(security=BASIC_SECURITY))
 @method_decorator(name='update', decorator=swagger_auto_schema(security=BASIC_SECURITY))
+@method_decorator(name='partial_update', decorator=swagger_auto_schema(security=BASIC_SECURITY))
 @method_decorator(name='destroy', decorator=swagger_auto_schema(security=BASIC_SECURITY))
 class ApplicationViewset(viewsets.ModelViewSet):
     """
